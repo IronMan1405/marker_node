@@ -8,21 +8,22 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
-find_package(interactive_markers REQUIRED)
-find_package(geometry_msgs REQUIRED)
-find_package(visualization_msgs REQUIRED)
+# find_package(interactive_markers REQUIRED)
+# find_package(geometry_msgs REQUIRED)
+# find_package(visualization_msgs REQUIRED)
+
 # uncomment the following section in order to fill in
 # further dependencies manually.
 # find_package(<dependency> REQUIRED)
 
-add_executable(ee_marker_node src/marker_node.cpp)
+# add_executable(ee_marker_node src/marker_node.cpp)
 
-ament_target_dependencies(ee_marker_node
-  rclcpp
-  interactive_markers
-  geometry_msgs
-  visualization_msgs
-  )
+# ament_target_dependencies(ee_marker_node
+#   rclcpp
+#   interactive_markers
+#   geometry_msgs
+#   visualization_msgs
+#   )
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -36,9 +37,9 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-install(TARGETS ee_marker_node 
-  DESTINATION lib/${PROJECT_NAME}
-)
+# install(TARGETS ee_marker_node
+#   DESTINATION lib/${PROJECT_NAME}
+# )
 
 install(DIRECTORY launch
   DESTINATION share/${PROJECT_NAME}
